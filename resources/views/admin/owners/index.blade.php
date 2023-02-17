@@ -13,7 +13,7 @@
             <div class="container md:px-5 mx-auto">
               <x-flash-message status="session('status')" />
               <div class="flex justify-end mb-4 ">
-                <button onclick="location.href='{{ route('admin.owners.create')}}'" class="text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-500 rounded ">新規登録する</button>
+                <button onclick="location.href='{{ route('admin.owners.create')}}'" class="text-white bg-black border-0 py-2 px-4 focus:outline-none hover:bg-black rounded ">新規登録する</button>
               </div>
               <div class="lg:w-2/3 w-full mx-auto overflow-auto">
                 <table class="table-auto w-full text-left whitespace-no-wrap">
@@ -33,13 +33,13 @@
                       <td class="md:px-4 py-3">{{ $owner->email }}</td>
                       <td class="md:px-4 py-3">{{ $owner->created_at->diffForHumans() }}</td>
                       <td class="md:px-4 py-3">
-                        <button onclick="location.href='{{route('admin.owners.edit',['owner' => $owner->id ])}}'" class="text-white bg-indigo-400 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-500 rounded ">編集</button>
+                        <button onclick="location.href='{{route('admin.owners.edit',['owner' => $owner->id ])}}'" class="text-white bg-indigo-400 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-500 rounded ">編集する</button>
                       </td>
                       <form id="delete_{{$owner->id}}" method="post" action="{{ route('admin.owners.destroy',['owner' => $owner->id])}}">
                         @csrf
                         @method('delete')
                       <td class="px-4 py-3">
-                        <a href="#" data-id="{{$owner->id}}" onclick="deletePost(this)" class="text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-500 rounded ">削除</a>
+                        <a href="#" data-id="{{$owner->id}}" onclick="deletePost(this)" class="text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-500 rounded ">削除する</a>
                       </td>
                       </form>
 
